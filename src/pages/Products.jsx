@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { assets } from "../assets/assets";
-import { ShopContext } from "../context/ShopContext";
 import RelatedProduct from "../components/RelatedProduct";
+import { ShopContext } from "../context/ShopContext";
 const Products = () => {
   const { productId } = useParams();
-  const { products, currency,addToCart } = useContext(ShopContext);
+  const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
@@ -80,7 +80,10 @@ const Products = () => {
               ))}
             </div>
           </div>
-          <button onClick={()=>addToCart(productData._id, size)} className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700">
+          <button
+            onClick={() => addToCart(productData._id, size)}
+            className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700"
+          >
             Add to cart
           </button>
           <hr className="mt-8 sm:w-4/5" />
@@ -99,13 +102,30 @@ const Products = () => {
           <p className="border px-5 py-3 text-sm">Reviews (120)</p>
         </div>
         <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae dignissimos, excepturi deserunt eum nesciunt, rerum vitae voluptate necessitatibus minima libero eos sed distinctio? Quisquam aperiam praesentium dicta architecto pariatur ipsa, vel, harum voluptate minus, cumque quo obcaecati laborum quos sapiente tenetur alias perferendis accusantium est debitis fugit. Beatae ipsam nostrum tempora eaque voluptatum iusto impedit.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore voluptatibus voluptates deleniti harum excepturi? Nam doloribus deleniti praesentium ratione quas molestiae excepturi, eos officia ex veritatis exercitationem omnis labore veniam perferendis similique pariatur minus, laudantium fugiat cum magnam dicta. Nemo.</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae
+            dignissimos, excepturi deserunt eum nesciunt, rerum vitae voluptate
+            necessitatibus minima libero eos sed distinctio? Quisquam aperiam
+            praesentium dicta architecto pariatur ipsa, vel, harum voluptate
+            minus, cumque quo obcaecati laborum quos sapiente tenetur alias
+            perferendis accusantium est debitis fugit. Beatae ipsam nostrum
+            tempora eaque voluptatum iusto impedit.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+            voluptatibus voluptates deleniti harum excepturi? Nam doloribus
+            deleniti praesentium ratione quas molestiae excepturi, eos officia
+            ex veritatis exercitationem omnis labore veniam perferendis
+            similique pariatur minus, laudantium fugiat cum magnam dicta. Nemo.
+          </p>
         </div>
       </div>
 
       {/* related products */}
-      <RelatedProduct category={productData.category} subCategory={productData.subCategory}/>
+      <RelatedProduct
+        category={productData.category}
+        subCategory={productData.subCategory}
+      />
     </div>
   ) : (
     <div className="opacity-0"></div>

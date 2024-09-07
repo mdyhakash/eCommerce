@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import Title from "../components/Title";
 import { ShopContext } from "../context/ShopContext";
 
@@ -28,7 +28,8 @@ const CartTotal = () => {
         <div className="flex justify-between">
           <b>Total</b>
           <b>
-            {currency} {getCartAmount() === 0 ? 0 : getCartAmount() + delivery_charge}
+            {currency}{" "}
+            {getCartAmount() === 0 ? 0 : getCartAmount() + delivery_charge}
           </b>
         </div>
       </div>

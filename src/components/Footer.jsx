@@ -1,4 +1,3 @@
-import React from "react";
 import { assets } from "../assets/assets";
 const Footer = () => {
   return (
@@ -24,13 +23,15 @@ const Footer = () => {
           <p className="text-xl font-medium mb-5">Get In Touch</p>
           <ul className="flex flex-col gap-1 text-gray-600">
             <li>+123-456-789</li>
-            <li>contact@myshop.com</li>
+            <li> adibas@gmail.com</li>
           </ul>
         </div>
       </div>
       <div>
         <hr />
-        <p className="py-5 text-sm text-center">Copyright 2024@myshop.com - All Right Reserved</p>
+        <p className="py-5 text-sm text-center">
+          Copyright mdyhakash@gmail.com - All Right Reserved
+        </p>
       </div>
     </div>
   );

@@ -1,4 +1,9 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Search from "./components/Search";
 import About from "./pages/About";
 import Cart from "./pages/Cart";
 import Collection from "./pages/Collection";
@@ -8,18 +13,13 @@ import Login from "./pages/Login";
 import Order from "./pages/Order";
 import PlaceOrder from "./pages/PlaceOrder";
 import Products from "./pages/Products";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Search from "./components/Search";
-import {ToastContainer,toast} from 'react-toastify'
-import "react-toastify/dist/ReactToastify.css"
 
 const App = () => {
   return (
     <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
       <ToastContainer />
-      <Navbar/>
-      <Search/>
+      <Navbar />
+      <Search />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/collection" element={<Collection />} />
@@ -31,7 +31,7 @@ const App = () => {
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/orders" element={<Order />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
